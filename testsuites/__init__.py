@@ -1,3 +1,4 @@
+__title__ = 'test-suites'
 __version__="0.1.0"
 
 import os
