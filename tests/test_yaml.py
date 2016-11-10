@@ -1,5 +1,8 @@
 
-import testsuites
+try:
+    import testsuites
+except ImportError:
+    pass
 
 test_yaml_file='''
 key1: value1
