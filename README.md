@@ -1,5 +1,9 @@
 # test-suites
 
+[![Build Status](https://travis-ci.org/intropro/test-suites.svg?branch=master)](https://travis-ci.org/intropro/test-suites)
+[![codecov](https://codecov.io/gh/intropro/test-suites/branch/master/graph/badge.svg)](https://codecov.io/gh/intropro/test-suites)
+
+
 The tool for executing test cases based on pytest framework
 
 The main goal of the project that there is no need to install any python dependencies to use it. Only one file `test-suites` is needed to be copied to local machine or remote server. The test-suites already contains all required libraries for writing test cases.
@@ -30,13 +34,25 @@ def test_example():
 
 ```sh
 $ test-suites
-=================================== test session starts ================================================
-platform linux2 -- Python 2.7.6, pytest-3.0.2, py-1.4.31, pluggy-0.3.1
-rootdir: /media/data1/svc/intropro/github/test-suites, inifile:
-collected 1 items
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.12, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
+rootdir: /repo, inifile:
+plugins: cov-2.4.0
+collected 2 items
 
 tests/test_example.py .
-============================== no tests ran in 0.17 seconds ============================================
+tests/test_yaml.py .
+
+---------- coverage: platform linux2, python 2.7.12-final-0 ----------
+Name                     Stmts   Miss  Cover   Missing
+------------------------------------------------------
+testsuites/__init__.py       6      0   100%
+testsuites/__main__.py       3      3     0%   2-6
+testsuites/main.py          10     10     0%   2-15
+------------------------------------------------------
+TOTAL                       19     13    32%
+
+=========================== 2 passed in 1.08 seconds ===========================
 ```
 The command line interface for test-suites is the same as for pytest, http://doc.pytest.org/en/latest/usage.html
 
