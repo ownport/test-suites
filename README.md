@@ -9,6 +9,7 @@ Includes:
 - argparse
 - plumbum
 - py
+- PyYAML
 
 ## How to install
 
@@ -45,6 +46,7 @@ The command line interface for test-suites is the same as for pytest, http://doc
 - argparse, v1.4.0
 - plumbum,v1.6.2
 - py,v1.3dev
+- PyYAML, v3.12
 
 ## License
 
@@ -54,3 +56,4 @@ The package contains several components with own license
 - argparse is (c) 2006-2009 Steven J. Bethard <steven.bethard@gmail.com>. The argparse module was contributed to Python as of Python 2.7 and thus was licensed under the Python license. Same license applies to all files in the argparse package project.
 - plumbum, is (c) Tomer Filiba <tomerfiliba@gmail.com>, MIT license.
 - py is (c) Holger Krekel and others, 2004-2015, MIT license
+- pyyaml is Copyright Kirill Simonov, Distributed under the terms of the MIT license, YAML parser and emitter for Python
