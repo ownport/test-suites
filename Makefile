@@ -19,3 +19,19 @@ compile: clean
 		cat bin/$(PROJECT_NAME_BIN).zip >> bin/$(PROJECT_NAME_BIN) && \
 		rm bin/$(PROJECT_NAME_BIN).zip && \
 		chmod a+x bin/$(PROJECT_NAME_BIN)
+
+
+test-all: clean
+	@ py.test
+
+
+test-all-with-coverage: clean
+	@ py.test --cov=testsuites --cov-report term-missing --cov-config=.coveragerc
+
+
+build-dev-docker-images:
+	@ docker build --tag intropro/testsuites-dev-env:py2.7 .
+
+
+run-local-ci: clean
+	@ local-ci -r $(shell pwd) -s .local-ci.yml
