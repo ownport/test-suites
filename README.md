@@ -8,12 +8,15 @@ The tool for executing test cases based on pytest framework
 
 The main goal of the project that there is no need to install any python dependencies to use it. Only one file `test-suites` is needed to be copied to local machine or remote server. The test-suites already contains all required libraries for writing test cases.
 
-Includes:
-- pytest
-- argparse
-- plumbum
-- py
-- PyYAML
+## Versions
+
+package  | version | url
+-------- | ------- | ---
+pytest   | 3.0.7   |
+argparse | 1.4.0   |
+plumbum  | 1.6.2   |
+py       | 1.4.31  |
+PyYAML   | 3.12    |
 
 ## How to install
 
@@ -35,7 +38,7 @@ def test_example():
 ```sh
 $ test-suites
 ============================= test session starts ==============================
-platform linux2 -- Python 2.7.12, pytest-3.0.3, py-1.4.31, pluggy-0.4.0
+platform linux2 -- Python 2.7.12, pytest-3.0.7, py-1.4.31, pluggy-0.4.0
 rootdir: /repo, inifile:
 plugins: cov-2.4.0
 collected 2 items
@@ -55,14 +58,6 @@ TOTAL                       19     13    32%
 =========================== 2 passed in 1.08 seconds ===========================
 ```
 The command line interface for test-suites is the same as for pytest, http://doc.pytest.org/en/latest/usage.html
-
-## Versions
-
-- pytest, v3.0.2
-- argparse, v1.4.0
-- plumbum,v1.6.2
-- py,v1.3dev
-- PyYAML, v3.12
 
 ## License
 
