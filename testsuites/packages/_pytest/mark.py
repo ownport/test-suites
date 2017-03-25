@@ -19,7 +19,7 @@ def pytest_addoption(parser):
         help="only run tests which match the given substring expression. "
              "An expression is a python evaluatable expression "
              "where all names are substring-matched against test names "
-             "and their parent classes. Example: -k 'test_method or test "
+             "and their parent classes. Example: -k 'test_method or test_"
              "other' matches all test functions and classes whose name "
              "contains 'test_method' or 'test_other'. "
              "Additionally keywords are matched to classes and functions "
@@ -54,6 +54,8 @@ def pytest_cmdline_main(config):
             tw.line()
         config._ensure_unconfigure()
         return 0
+
+
 pytest_cmdline_main.tryfirst = True
 
 
@@ -64,7 +66,7 @@ def pytest_collection_modifyitems(items, config):
         return
     # pytest used to allow "-" for negating
     # but today we just allow "-" at the beginning, use "not" instead
-    # we probably remove "-" alltogether soon
+    # we probably remove "-" altogether soon
     if keywordexpr.startswith("-"):
         keywordexpr = "not " + keywordexpr[1:]
     selectuntil = False
