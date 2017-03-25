@@ -93,3 +93,6 @@ bin/
 
 # Local CI
 .local-ci/
+
+# IDE
+.idea/
