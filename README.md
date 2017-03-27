@@ -10,13 +10,13 @@ The main goal of the project that there is no need to install any python depende
 
 ## Versions
 
-package  | version | url
--------- | ------- | ---
-pytest   | 3.0.7   |
-argparse | 1.4.0   |
-plumbum  | 1.6.2   |
-py       | 1.4.31  |
-PyYAML   | 3.12    |
+package    | version | url
+---------- | ------- | ---
+pytest     | 3.0.7   |
+argparse   | 1.4.0   |
+plumbum    | 1.6.2   |
+py         | 1.4.31  |
+PyYAML     | 3.12    |
 
 ## How to install
 
@@ -37,25 +37,14 @@ def test_example():
 
 ```sh
 $ test-suites
-============================= test session starts ==============================
+==================================================================== test session starts =====================================================================
 platform linux2 -- Python 2.7.12, pytest-3.0.7, py-1.4.31, pluggy-0.4.0
-rootdir: /repo, inifile:
-plugins: cov-2.4.0
+rootdir: /dev/github/test-suites, inifile:
 collected 2 items
 
 tests/test_example.py .
 tests/test_yaml.py .
-
----------- coverage: platform linux2, python 2.7.12-final-0 ----------
-Name                     Stmts   Miss  Cover   Missing
-------------------------------------------------------
-testsuites/__init__.py       6      0   100%
-testsuites/__main__.py       3      3     0%   2-6
-testsuites/main.py          10     10     0%   2-15
-------------------------------------------------------
-TOTAL                       19     13    32%
-
-=========================== 2 passed in 1.08 seconds ===========================
+================================================================== 2 passed in 0.08 seconds ==================================================================
 ```
 The command line interface for test-suites is the same as for pytest, http://doc.pytest.org/en/latest/usage.html
 
