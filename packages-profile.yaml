@@ -1,0 +1,23 @@
+- name: install py.test-3.0.7 to testsuites/packages/
+  install: pytest==3.0.7
+  target: testsuites/packages/
+
+- name: install pytest-cov-2.4.0 to testsuites/packages/
+  install: pytest-cov==2.4.0
+  target: testsuites/packages/
+
+- name: install argparse-1.4.0 to testsuites/packages/
+  install: argparse==1.4.0
+  target: testsuites/packages/
+
+- name: install plumbum-1.6.2 to testsuites/packages/
+  install: plumbum==1.6.2
+  target: testsuites/packages/
+
+- name: install py-1.4.31 to testsuites/packages/
+  install: py==1.4.31
+  target: testsuites/packages/
+
+- name: install PyYAML-3.12 to testsuites/packages/
+  install: PyYAML==3.12
+  target: testsuites/packages/
