@@ -3,8 +3,8 @@ PROJECT_NAME_BIN ?= test-suites
 PROJECT_NAME_SRC ?= testsuites
 
 clean:
-	@ echo "[INFO] Cleaning directory:" $(shell pwd)/bin
-	@ rm -rf $(shell pwd)/bin
+	@ echo "[INFO] Cleaning directory:" $(shell pwd)/target
+	@ rm -rf $(shell pwd)/target
 	@ echo "[INFO] Cleaning files: *.pyc"
 	@ find . -name "*.pyc" -delete
 	@ echo "[INFO] Cleaning files: .coverage"
@@ -13,19 +13,19 @@ clean:
 
 compile: clean
 	@ echo "[INFO] Compiling to binary, $(PROJECT_NAME_BIN)"
-	@ mkdir -p $(shell pwd)/bin
-	@ cd $(shell pwd)/$(PROJECT_NAME_SRC)/; zip --quiet -r ../bin/$(PROJECT_NAME_BIN) *
-	@ echo '#!$(PYTHON)' > bin/$(PROJECT_NAME_BIN) && \
-		cat bin/$(PROJECT_NAME_BIN).zip >> bin/$(PROJECT_NAME_BIN) && \
-		rm bin/$(PROJECT_NAME_BIN).zip && \
-		chmod a+x bin/$(PROJECT_NAME_BIN)
+	@ mkdir -p $(shell pwd)/target
+	@ cd $(shell pwd)/$(PROJECT_NAME_SRC)/; zip --quiet -r ../target/$(PROJECT_NAME_BIN) *
+	@ echo '#!$(PYTHON)' > target/$(PROJECT_NAME_BIN) && \
+		cat target/$(PROJECT_NAME_BIN).zip >> target/$(PROJECT_NAME_BIN) && \
+		rm target/$(PROJECT_NAME_BIN).zip && \
+		chmod a+x target/$(PROJECT_NAME_BIN)
 
 
-test-all: clean
-	@ py.test
+test: compile
+	@ PYTHONDONTWRITEBYTECODE=1 $(shell pwd)/target/test-suites
 
 
-test-all-with-coverage: clean
+test-with-coverage: compile
 	@ py.test --cov=testsuites --cov-report term-missing --cov-config=.coveragerc
 
 
